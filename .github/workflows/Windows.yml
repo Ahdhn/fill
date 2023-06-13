@@ -3,13 +3,7 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   WindowsRun:
     runs-on: windows-2019
-    steps:
-      - uses: Jimver/cuda-toolkit@v0.2.8
-        id: cuda-toolkit
-        with:
-          cuda: '11.7.0'  
-          linux-local-args: '["--toolkit"]'
-      - run: nvcc -V      
+    steps:      
       - name: Checkout
         uses: actions/checkout@v3            
       - name: Create build directory
@@ -22,4 +16,3 @@ jobs:
       #- name: Run Test
       #  working-directory: ${{github.workspace}}/build
       #  run: ctest --no-compress-output -T Test -C Release --output-on-failure
-      - run: echo "This job's status is ${{ job.status }}."
