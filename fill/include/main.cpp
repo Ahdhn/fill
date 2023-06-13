@@ -3,6 +3,7 @@
 #include <array>
 #include <fstream>
 #include <iostream>
+#include <iterator>
 
 #include "polyscope/surface_mesh.h"
 #include "polyscope/surface_mesh_io.h"
